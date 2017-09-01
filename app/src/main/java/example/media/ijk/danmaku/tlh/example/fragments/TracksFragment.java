@@ -34,7 +34,7 @@ import android.widget.TextView;
 import java.util.Locale;
 
 import example.media.ijk.danmaku.tlh.ijkplayer.R;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.ITrackInfo;
+import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 
 
 public class TracksFragment extends Fragment {

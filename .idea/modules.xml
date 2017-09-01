@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TLHplayer.iml" filepath="$PROJECT_DIR$/TLHplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AMPPlayer.iml" filepath="$PROJECT_DIR$/AMPPlayer.iml" />
+      <module fileurl="file://E:\AS_workpace\AMPPlayer\TLHplayer.iml" filepath="E:\AS_workpace\AMPPlayer\TLHplayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

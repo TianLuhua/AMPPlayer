@@ -18,10 +18,10 @@
 package example.media.ijk.danmaku.tlh.example.widget.media;
 
 
-import example.media.ijk.danmaku.tlh.ijkplayer.IMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.IjkMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.MediaPlayerProxy;
-import example.media.ijk.danmaku.tlh.ijkplayer.TextureMediaPlayer;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+import tv.danmaku.ijk.media.player.MediaPlayerProxy;
+import tv.danmaku.ijk.media.player.TextureMediaPlayer;
 
 public class MediaPlayerCompat {
     public static String getName(IMediaPlayer mp) {

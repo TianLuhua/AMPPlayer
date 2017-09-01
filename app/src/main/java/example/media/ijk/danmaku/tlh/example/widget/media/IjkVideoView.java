@@ -48,17 +48,17 @@ import java.util.Map;
 
 import example.media.ijk.danmaku.tlh.example.application.Settings;
 import example.media.ijk.danmaku.tlh.example.services.MediaPlayerService;
-import example.media.ijk.danmaku.tlh.ijkplayer.AndroidMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.IMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.IjkMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.IjkTimedText;
+import tv.danmaku.ijk.media.player.AndroidMediaPlayer;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkTimedText;
 import example.media.ijk.danmaku.tlh.ijkplayer.R;
-import example.media.ijk.danmaku.tlh.ijkplayer.TextureMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.IMediaDataSource;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.IMediaFormat;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.ITrackInfo;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.IjkMediaFormat;
-import example.media.ijk.danmaku.tlh.ijkexo.IjkExoMediaPlayer;
+import tv.danmaku.ijk.media.player.TextureMediaPlayer;
+import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
+import tv.danmaku.ijk.media.player.misc.IMediaFormat;
+import tv.danmaku.ijk.media.player.misc.ITrackInfo;
+import tv.danmaku.ijk.media.player.misc.IjkMediaFormat;
+import tv.danmaku.ijk.media.exo.IjkExoMediaPlayer;
 
 
 public class IjkVideoView extends FrameLayout implements MediaController.MediaPlayerControl {

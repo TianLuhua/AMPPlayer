@@ -44,9 +44,9 @@ import example.media.ijk.danmaku.tlh.example.fragments.TracksFragment;
 import example.media.ijk.danmaku.tlh.example.widget.media.AndroidMediaController;
 import example.media.ijk.danmaku.tlh.example.widget.media.IjkVideoView;
 import example.media.ijk.danmaku.tlh.example.widget.media.MeasureHelper;
-import example.media.ijk.danmaku.tlh.ijkplayer.IjkMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import example.media.ijk.danmaku.tlh.ijkplayer.R;
-import example.media.ijk.danmaku.tlh.ijkplayer.misc.ITrackInfo;
+import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 
 
 public class VideoActivity extends AppCompatActivity implements TracksFragment.ITrackHolder {

@@ -24,7 +24,7 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.View;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 
 public interface IRenderView {

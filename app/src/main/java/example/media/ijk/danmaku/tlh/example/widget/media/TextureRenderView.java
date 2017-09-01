@@ -36,9 +36,9 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.IMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.ISurfaceTextureHolder;
-import example.media.ijk.danmaku.tlh.ijkplayer.ISurfaceTextureHost;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.ISurfaceTextureHolder;
+import tv.danmaku.ijk.media.player.ISurfaceTextureHost;
 
 
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)

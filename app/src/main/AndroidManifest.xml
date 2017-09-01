@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="example.media.ijk.danmaku.tlh.ijkplayer">
+    package="com.action.amp.ampplyer">
 
 
     <uses-sdk
@@ -21,7 +21,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="example.media.ijk.danmaku.tlh.example.activities.FileExplorerActivity"
+            android:name="com.action.amp.ampplyer.activities.FileExplorerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="user"
@@ -33,27 +33,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="example.media.ijk.danmaku.tlh.example.activities.SampleMediaActivity"
+            android:name="com.action.amp.ampplyer.activities.SampleMediaActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="user"
             android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name="example.media.ijk.danmaku.tlh.example.activities.RecentMediaActivity"
+            android:name="com.action.amp.ampplyer.activities.RecentMediaActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="user"
             android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name="example.media.ijk.danmaku.tlh.example.activities.SettingsActivity"
+            android:name="com.action.amp.ampplyer.activities.SettingsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="user"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="example.media.ijk.danmaku.tlh.example.activities.VideoActivity"
+            android:name="com.action.amp.ampplyer.activities.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="user"
@@ -76,7 +76,7 @@
         </activity>
 
         <service
-            android:name="example.media.ijk.danmaku.tlh.example.services.MediaPlayerService"
+            android:name="com.action.amp.ampplyer.services.MediaPlayerService"
             android:enabled="false"
             android:exported="false"
             android:icon="@mipmap/ic_launcher"

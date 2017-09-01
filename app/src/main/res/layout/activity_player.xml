@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="#0099cc">
 
-        <example.media.ijk.danmaku.tlh.example.widget.media.IjkVideoView
+        <com.action.amp.ampplyer.widget.media.IjkVideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

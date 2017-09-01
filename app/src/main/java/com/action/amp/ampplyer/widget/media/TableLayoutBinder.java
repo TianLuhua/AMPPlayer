@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
+import com.action.amp.ampplyer.R;
 
 
 public class TableLayoutBinder {

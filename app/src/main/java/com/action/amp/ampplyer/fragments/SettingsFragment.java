@@ -20,8 +20,7 @@ package com.action.amp.ampplyer.fragments;
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
-
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
+import com.action.amp.ampplyer.R;
 
 
 public class SettingsFragment extends PreferenceFragmentCompat {

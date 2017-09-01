@@ -22,6 +22,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
+import com.action.amp.ampplyer.R;
 import com.squareup.otto.Subscribe;
 
 import java.io.File;
@@ -31,7 +32,6 @@ import com.action.amp.ampplyer.application.AppActivity;
 import com.action.amp.ampplyer.application.Settings;
 import com.action.amp.ampplyer.eventbus.FileExplorerEvents;
 import com.action.amp.ampplyer.fragments.FileListFragment;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public class FileExplorerActivity extends AppActivity {

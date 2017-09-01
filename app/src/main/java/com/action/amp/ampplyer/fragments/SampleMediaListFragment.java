@@ -30,8 +30,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.activities.VideoActivity;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public class SampleMediaListFragment extends Fragment {

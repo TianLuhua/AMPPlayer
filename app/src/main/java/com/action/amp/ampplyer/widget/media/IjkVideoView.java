@@ -46,13 +46,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.application.Settings;
 import com.action.amp.ampplyer.services.MediaPlayerService;
 import tv.danmaku.ijk.media.player.AndroidMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkTimedText;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 import tv.danmaku.ijk.media.player.TextureMediaPlayer;
 import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
 import tv.danmaku.ijk.media.player.misc.IMediaFormat;

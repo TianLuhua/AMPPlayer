@@ -38,6 +38,7 @@ import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.application.Settings;
 import com.action.amp.ampplyer.content.RecentMediaStorage;
 import com.action.amp.ampplyer.fragments.TracksFragment;
@@ -45,7 +46,6 @@ import com.action.amp.ampplyer.widget.media.AndroidMediaController;
 import com.action.amp.ampplyer.widget.media.IjkVideoView;
 import com.action.amp.ampplyer.widget.media.MeasureHelper;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 
 

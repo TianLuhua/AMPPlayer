@@ -23,7 +23,7 @@ import android.support.v7.preference.ListPreference;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
+import com.action.amp.ampplyer.R;
 
 
 public class IjkListPreference extends ListPreference {

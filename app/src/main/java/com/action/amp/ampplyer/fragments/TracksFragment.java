@@ -31,9 +31,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.action.amp.ampplyer.R;
+
 import java.util.Locale;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 
 

@@ -25,8 +25,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.fragments.SettingsFragment;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public class SettingsActivity extends AppCompatActivity {

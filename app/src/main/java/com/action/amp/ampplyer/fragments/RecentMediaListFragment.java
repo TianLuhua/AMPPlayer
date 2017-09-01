@@ -32,9 +32,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.activities.VideoActivity;
 import com.action.amp.ampplyer.content.RecentMediaStorage;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public class RecentMediaListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {

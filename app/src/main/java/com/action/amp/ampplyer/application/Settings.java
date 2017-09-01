@@ -21,7 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
+import com.action.amp.ampplyer.R;
 
 
 public class Settings {

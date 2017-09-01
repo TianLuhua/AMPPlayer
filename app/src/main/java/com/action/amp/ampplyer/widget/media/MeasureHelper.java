@@ -21,9 +21,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import com.action.amp.ampplyer.R;
+
 import java.lang.ref.WeakReference;
 
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public final class MeasureHelper {

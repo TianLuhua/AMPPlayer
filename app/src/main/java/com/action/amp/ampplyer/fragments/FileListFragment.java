@@ -37,10 +37,10 @@ import android.widget.TextView;
 
 import java.io.File;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.content.PathCursor;
 import com.action.amp.ampplyer.content.PathCursorLoader;
 import com.action.amp.ampplyer.eventbus.FileExplorerEvents;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 public class FileListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {

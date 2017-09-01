@@ -28,10 +28,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.activities.RecentMediaActivity;
 import com.action.amp.ampplyer.activities.SampleMediaActivity;
 import com.action.amp.ampplyer.activities.SettingsActivity;
-import example.media.ijk.danmaku.tlh.ijkplayer.R;
 
 
 @SuppressLint("Registered")

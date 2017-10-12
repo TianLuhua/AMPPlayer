@@ -56,7 +56,7 @@
             android:name="com.action.amp.ampplyer.activities.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="user"
+            android:screenOrientation="sensor"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

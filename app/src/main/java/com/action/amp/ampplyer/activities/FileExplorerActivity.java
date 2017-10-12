@@ -97,4 +97,5 @@ public class FileExplorerActivity extends AppActivity {
             VideoActivity.intentTo(this, f.getPath(), f.getName());
         }
     }
+
 }

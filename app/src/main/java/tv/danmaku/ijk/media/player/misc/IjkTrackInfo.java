@@ -21,7 +21,6 @@ import android.text.TextUtils;
 
 import tv.danmaku.ijk.media.player.IjkMediaMeta;
 
-
 public class IjkTrackInfo implements ITrackInfo {
     private int mTrackType = MEDIA_TRACK_TYPE_UNKNOWN;
     private IjkMediaMeta.IjkStreamMeta mStreamMeta;

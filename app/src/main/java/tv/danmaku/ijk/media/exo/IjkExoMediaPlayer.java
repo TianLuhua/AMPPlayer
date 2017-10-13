@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2015 Bilibili
+ * Copyright (C) 2015 Zhang Rui <bbcallen@gmail.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package tv.danmaku.ijk.media.exo;
 
@@ -12,16 +28,17 @@ import com.google.android.exoplayer.util.Util;
 import java.io.FileDescriptor;
 import java.util.Map;
 
+import tv.danmaku.ijk.media.exo.demo.EventLogger;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
+import tv.danmaku.ijk.media.exo.demo.player.ExtractorRendererBuilder;
 import tv.danmaku.ijk.media.exo.demo.player.HlsRendererBuilder;
+import tv.danmaku.ijk.media.exo.demo.player.SmoothStreamingRendererBuilder;
+import tv.danmaku.ijk.media.exo.demo.SmoothStreamingTestMediaDrmCallback;
 import tv.danmaku.ijk.media.player.AbstractMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.MediaInfo;
 import tv.danmaku.ijk.media.player.misc.IjkTrackInfo;
-import tv.danmaku.ijk.media.exo.demo.EventLogger;
-import tv.danmaku.ijk.media.exo.demo.SmoothStreamingTestMediaDrmCallback;
-import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer;
-import tv.danmaku.ijk.media.exo.demo.player.ExtractorRendererBuilder;
-import tv.danmaku.ijk.media.exo.demo.player.SmoothStreamingRendererBuilder;
 
 public class IjkExoMediaPlayer extends AbstractMediaPlayer {
     private Context mAppContext;
@@ -32,7 +49,7 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
     private int mVideoHeight;
     private Surface mSurface;
 
-    private DemoPlayer.RendererBuilder mRendererBuilder;
+    private RendererBuilder mRendererBuilder;
 
     public IjkExoMediaPlayer(Context context) {
         mAppContext = context.getApplicationContext();
@@ -285,7 +302,7 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
         return mInternalPlayer.getBufferedPercentage();
     }
 
-    private DemoPlayer.RendererBuilder getRendererBuilder() {
+    private RendererBuilder getRendererBuilder() {
         Uri contentUri = Uri.parse(mDataSource);
         String userAgent = Util.getUserAgent(mAppContext, "IjkExoMediaPlayer");
         int contentType = inferContentType(contentUri);
@@ -303,7 +320,7 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
                 return new ExtractorRendererBuilder(mAppContext, userAgent, contentUri);
         }
     }
-
+    
     /**
      * Makes a best guess to infer the type from a media {@link Uri}
      *
@@ -320,7 +337,8 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
         private boolean mDidPrepare = false;
         private boolean mIsBuffering = false;
 
-        public void onStateChanged(boolean playWhenReady, int playbackState) {
+        public void onStateChanged(boolean playWhenReady, int playbackState)
+        {
             if (mIsBuffering) {
                 switch (playbackState) {
                     case ExoPlayer.STATE_ENDED:
@@ -362,12 +380,14 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
             }
         }
 
-        public void onError(Exception e) {
+        public void onError(Exception e)
+        {
             notifyOnError(IMediaPlayer.MEDIA_ERROR_UNKNOWN, IMediaPlayer.MEDIA_ERROR_UNKNOWN);
         }
 
         public void onVideoSizeChanged(int width, int height, int unappliedRotationDegrees,
-                                       float pixelWidthHeightRatio) {
+                                float pixelWidthHeightRatio)
+        {
             mVideoWidth = width;
             mVideoHeight = height;
             notifyOnVideoSizeChanged(width, height, 1, 1);

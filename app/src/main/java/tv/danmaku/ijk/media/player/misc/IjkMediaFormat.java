@@ -27,7 +27,6 @@ import java.util.Map;
 
 import tv.danmaku.ijk.media.player.IjkMediaMeta;
 
-
 public class IjkMediaFormat implements IMediaFormat {
     // Common
     public static final String KEY_IJK_CODEC_LONG_NAME_UI = "ijk-codec-long-name-ui";

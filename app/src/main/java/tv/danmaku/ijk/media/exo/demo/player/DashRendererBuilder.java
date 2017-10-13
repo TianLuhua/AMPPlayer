@@ -20,7 +20,6 @@ import android.media.AudioManager;
 import android.media.MediaCodec;
 import android.os.Handler;
 import android.util.Log;
-
 import com.google.android.exoplayer.DefaultLoadControl;
 import com.google.android.exoplayer.LoadControl;
 import com.google.android.exoplayer.MediaCodecAudioTrackRenderer;
@@ -40,6 +39,7 @@ import com.google.android.exoplayer.dash.mpd.Period;
 import com.google.android.exoplayer.dash.mpd.UtcTimingElement;
 import com.google.android.exoplayer.dash.mpd.UtcTimingElementResolver;
 import com.google.android.exoplayer.dash.mpd.UtcTimingElementResolver.UtcTimingCallback;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
 import com.google.android.exoplayer.drm.FrameworkMediaCrypto;
 import com.google.android.exoplayer.drm.MediaDrmCallback;
 import com.google.android.exoplayer.drm.StreamingDrmSessionManager;
@@ -52,14 +52,12 @@ import com.google.android.exoplayer.upstream.DefaultUriDataSource;
 import com.google.android.exoplayer.upstream.UriDataSource;
 import com.google.android.exoplayer.util.ManifestFetcher;
 import com.google.android.exoplayer.util.Util;
-
 import java.io.IOException;
-
 
 /**
  * A {link RendererBuilder} for DASH.
  */
-public class DashRendererBuilder implements DemoPlayer.RendererBuilder {
+public class DashRendererBuilder implements RendererBuilder {
 
   private static final String TAG = "DashRendererBuilder";
 
@@ -81,7 +79,7 @@ public class DashRendererBuilder implements DemoPlayer.RendererBuilder {
   private AsyncRendererBuilder currentAsyncBuilder;
 
   public DashRendererBuilder(Context context, String userAgent, String url,
-                             MediaDrmCallback drmCallback) {
+      MediaDrmCallback drmCallback) {
     this.context = context;
     this.userAgent = userAgent;
     this.url = url;
@@ -117,7 +115,7 @@ public class DashRendererBuilder implements DemoPlayer.RendererBuilder {
     private long elapsedRealtimeOffset;
 
     public AsyncRendererBuilder(Context context, String userAgent, String url,
-                                MediaDrmCallback drmCallback, DemoPlayer player) {
+        MediaDrmCallback drmCallback, DemoPlayer player) {
       this.context = context;
       this.userAgent = userAgent;
       this.drmCallback = drmCallback;

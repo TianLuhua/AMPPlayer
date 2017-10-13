@@ -19,7 +19,6 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaCodec;
 import android.os.Handler;
-
 import com.google.android.exoplayer.DefaultLoadControl;
 import com.google.android.exoplayer.LoadControl;
 import com.google.android.exoplayer.MediaCodecAudioTrackRenderer;
@@ -28,6 +27,7 @@ import com.google.android.exoplayer.MediaCodecVideoTrackRenderer;
 import com.google.android.exoplayer.SampleSource;
 import com.google.android.exoplayer.TrackRenderer;
 import com.google.android.exoplayer.audio.AudioCapabilities;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
 import com.google.android.exoplayer.hls.DefaultHlsTrackSelector;
 import com.google.android.exoplayer.hls.HlsChunkSource;
 import com.google.android.exoplayer.hls.HlsMasterPlaylist;
@@ -46,15 +46,13 @@ import com.google.android.exoplayer.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer.upstream.DefaultUriDataSource;
 import com.google.android.exoplayer.util.ManifestFetcher;
 import com.google.android.exoplayer.util.ManifestFetcher.ManifestCallback;
-
 import java.io.IOException;
 import java.util.List;
-
 
 /**
  * A {link RendererBuilder} for HLS.
  */
-public class HlsRendererBuilder implements DemoPlayer.RendererBuilder {
+public class HlsRendererBuilder implements RendererBuilder {
 
   private static final int BUFFER_SEGMENT_SIZE = 64 * 1024;
   private static final int MAIN_BUFFER_SEGMENTS = 254;

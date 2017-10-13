@@ -19,7 +19,6 @@ import android.media.MediaCodec.CryptoException;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.Surface;
-
 import com.google.android.exoplayer.CodecCounters;
 import com.google.android.exoplayer.DummyTrackRenderer;
 import com.google.android.exoplayer.ExoPlaybackException;
@@ -47,7 +46,6 @@ import com.google.android.exoplayer.upstream.BandwidthMeter;
 import com.google.android.exoplayer.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer.util.DebugTextViewHelper;
 import com.google.android.exoplayer.util.PlayerControl;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -63,7 +61,7 @@ public class DemoPlayer implements ExoPlayer.Listener, ChunkSampleSource.EventLi
     SingleSampleSource.EventListener, DefaultBandwidthMeter.EventListener,
     MediaCodecVideoTrackRenderer.EventListener, MediaCodecAudioTrackRenderer.EventListener,
     StreamingDrmSessionManager.EventListener, DashChunkSource.EventListener, TextRenderer,
-        MetadataRenderer<List<Id3Frame>>, DebugTextViewHelper.Provider {
+    MetadataRenderer<List<Id3Frame>>, DebugTextViewHelper.Provider {
 
   /**
    * Builds renderers for the player.
@@ -440,7 +438,7 @@ public class DemoPlayer implements ExoPlayer.Listener, ChunkSampleSource.EventLi
 
   @Override
   public void onDownstreamFormatChanged(int sourceId, Format format, int trigger,
-                                        long mediaTimeMs) {
+      long mediaTimeMs) {
     if (infoListener == null) {
       return;
     }
@@ -501,7 +499,7 @@ public class DemoPlayer implements ExoPlayer.Listener, ChunkSampleSource.EventLi
 
   @Override
   public void onDecoderInitialized(String decoderName, long elapsedRealtimeMs,
-                                   long initializationDurationMs) {
+      long initializationDurationMs) {
     if (infoListener != null) {
       infoListener.onDecoderInitialized(decoderName, elapsedRealtimeMs, initializationDurationMs);
     }

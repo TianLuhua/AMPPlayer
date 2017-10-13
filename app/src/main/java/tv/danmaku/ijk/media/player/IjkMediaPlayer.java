@@ -23,8 +23,8 @@ import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
-import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
+import android.graphics.Rect;
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.media.RingtoneManager;
@@ -59,7 +59,6 @@ import tv.danmaku.ijk.media.player.misc.IMediaDataSource;
 import tv.danmaku.ijk.media.player.misc.ITrackInfo;
 import tv.danmaku.ijk.media.player.misc.IjkTrackInfo;
 import tv.danmaku.ijk.media.player.pragma.DebugLog;
-
 
 /**
  * @author bbcallen
@@ -132,9 +131,11 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
     public static final int FFP_PROP_INT64_ASYNC_STATISTIC_BUF_CAPACITY     = 20203;
     public static final int FFP_PROP_INT64_TRAFFIC_STATISTIC_BYTE_COUNT     = 20204;
     public static final int FFP_PROP_INT64_CACHE_STATISTIC_PHYSICAL_POS     = 20205;
-    public static final int FFP_PROP_INT64_CACHE_STATISTIC_BUF_FORWARDS     = 20206;
+    public static final int FFP_PROP_INT64_CACHE_STATISTIC_FILE_FORWARDS    = 20206;
     public static final int FFP_PROP_INT64_CACHE_STATISTIC_FILE_POS         = 20207;
     public static final int FFP_PROP_INT64_CACHE_STATISTIC_COUNT_BYTES      = 20208;
+    public static final int FFP_PROP_INT64_LOGICAL_FILE_SIZE                = 20209;
+    public static final int FFP_PROP_INT64_SHARE_CACHE_DATA                 = 20210;
     public static final int FFP_PROP_INT64_BIT_RATE                         = 20100;
     public static final int FFP_PROP_INT64_TCP_SPEED                        = 20200;
     public static final int FFP_PROP_INT64_LATEST_SEEK_LOAD_DURATION        = 20300;
@@ -244,6 +245,9 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
          */
         native_setup(new WeakReference<IjkMediaPlayer>(this));
     }
+
+    private native void _setFrameAtTime(String imgCachePath, long startTime, long endTime, int num, int imgDefinition)
+            throws IllegalArgumentException, IllegalStateException;
 
     /*
      * Update the IjkMediaPlayer SurfaceTexture. Call after setting a new
@@ -499,12 +503,6 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
 
     private native void _setAndroidIOCallback(IAndroidIO androidIO)
             throws IllegalArgumentException, SecurityException, IllegalStateException;
-
-    private native void _injectCacheNode(int index, long fileLogicalPos, long physicalPos, long cacheSize, long fileSize);
-
-    public void injectCacheNode(int index, long fileLogicalPos, long physicalPos, long cacheSize, long fileSize) {
-        _injectCacheNode(index, fileLogicalPos, physicalPos, cacheSize, fileSize);
-     }
 
     @Override
     public String getDataSource() {
@@ -811,8 +809,8 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
         return _getPropertyLong(FFP_PROP_INT64_CACHE_STATISTIC_PHYSICAL_POS, 0);
     }
 
-    public long getCacheStatisticBufForwards() {
-        return _getPropertyLong(FFP_PROP_INT64_CACHE_STATISTIC_BUF_FORWARDS, 0);
+    public long getCacheStatisticFileForwards() {
+        return _getPropertyLong(FFP_PROP_INT64_CACHE_STATISTIC_FILE_FORWARDS, 0);
     }
 
     public long getCacheStatisticFilePos() {
@@ -821,6 +819,10 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
 
     public long getCacheStatisticCountBytes() {
         return _getPropertyLong(FFP_PROP_INT64_CACHE_STATISTIC_COUNT_BYTES, 0);
+    }
+
+    public long getFileSize() {
+        return _getPropertyLong(FFP_PROP_INT64_LOGICAL_FILE_SIZE, 0);
     }
 
     public long getBitRate() {
@@ -947,6 +949,10 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
         native_finalize();
     }
 
+    public void setCacheShare(int share) {
+        _setPropertyLong(FFP_PROP_INT64_SHARE_CACHE_DATA, (long)share);
+    }
+
     private static class EventHandler extends Handler {
         private final WeakReference<IjkMediaPlayer> mWeakPlayer;
 
@@ -1054,7 +1060,7 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
      */
     @CalledByNative
     private static void postEventFromNative(Object weakThiz, int what,
-                                            int arg1, int arg2, Object obj) {
+            int arg1, int arg2, Object obj) {
         if (weakThiz == null)
             return;
 

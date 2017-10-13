@@ -20,12 +20,13 @@ import android.media.AudioManager;
 import android.media.MediaCodec;
 import android.net.Uri;
 import android.os.Handler;
-
 import com.google.android.exoplayer.MediaCodecAudioTrackRenderer;
 import com.google.android.exoplayer.MediaCodecSelector;
 import com.google.android.exoplayer.MediaCodecVideoTrackRenderer;
 import com.google.android.exoplayer.TrackRenderer;
 import com.google.android.exoplayer.audio.AudioCapabilities;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
+import com.google.android.exoplayer.extractor.Extractor;
 import com.google.android.exoplayer.extractor.ExtractorSampleSource;
 import com.google.android.exoplayer.text.TextTrackRenderer;
 import com.google.android.exoplayer.upstream.Allocator;
@@ -34,11 +35,10 @@ import com.google.android.exoplayer.upstream.DefaultAllocator;
 import com.google.android.exoplayer.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer.upstream.DefaultUriDataSource;
 
-
 /**
  * A {link RendererBuilder} for streams that can be read using an {link Extractor}.
  */
-public class ExtractorRendererBuilder implements DemoPlayer.RendererBuilder {
+public class ExtractorRendererBuilder implements RendererBuilder {
 
   private static final int BUFFER_SEGMENT_SIZE = 64 * 1024;
   private static final int BUFFER_SEGMENT_COUNT = 256;

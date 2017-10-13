@@ -19,7 +19,6 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaCodec;
 import android.os.Handler;
-
 import com.google.android.exoplayer.DefaultLoadControl;
 import com.google.android.exoplayer.LoadControl;
 import com.google.android.exoplayer.MediaCodecAudioTrackRenderer;
@@ -30,6 +29,7 @@ import com.google.android.exoplayer.audio.AudioCapabilities;
 import com.google.android.exoplayer.chunk.ChunkSampleSource;
 import com.google.android.exoplayer.chunk.ChunkSource;
 import com.google.android.exoplayer.chunk.FormatEvaluator.AdaptiveEvaluator;
+import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
 import com.google.android.exoplayer.drm.DrmSessionManager;
 import com.google.android.exoplayer.drm.FrameworkMediaCrypto;
 import com.google.android.exoplayer.drm.MediaDrmCallback;
@@ -47,14 +47,12 @@ import com.google.android.exoplayer.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer.upstream.DefaultUriDataSource;
 import com.google.android.exoplayer.util.ManifestFetcher;
 import com.google.android.exoplayer.util.Util;
-
 import java.io.IOException;
-
 
 /**
  * A {link RendererBuilder} for SmoothStreaming.
  */
-public class SmoothStreamingRendererBuilder implements DemoPlayer.RendererBuilder {
+public class SmoothStreamingRendererBuilder implements RendererBuilder {
 
   private static final int BUFFER_SEGMENT_SIZE = 64 * 1024;
   private static final int VIDEO_BUFFER_SEGMENTS = 200;
@@ -70,7 +68,7 @@ public class SmoothStreamingRendererBuilder implements DemoPlayer.RendererBuilde
   private AsyncRendererBuilder currentAsyncBuilder;
 
   public SmoothStreamingRendererBuilder(Context context, String userAgent, String url,
-                                        MediaDrmCallback drmCallback) {
+      MediaDrmCallback drmCallback) {
     this.context = context;
     this.userAgent = userAgent;
     this.url = Util.toLowerInvariant(url).endsWith("/manifest") ? url : url + "/Manifest";
@@ -103,7 +101,7 @@ public class SmoothStreamingRendererBuilder implements DemoPlayer.RendererBuilde
     private boolean canceled;
 
     public AsyncRendererBuilder(Context context, String userAgent, String url,
-                                MediaDrmCallback drmCallback, DemoPlayer player) {
+        MediaDrmCallback drmCallback, DemoPlayer player) {
       this.context = context;
       this.userAgent = userAgent;
       this.drmCallback = drmCallback;

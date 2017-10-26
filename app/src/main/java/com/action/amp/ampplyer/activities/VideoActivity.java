@@ -42,6 +42,7 @@ import com.action.amp.ampplyer.R;
 import com.action.amp.ampplyer.application.Settings;
 import com.action.amp.ampplyer.content.RecentMediaStorage;
 import com.action.amp.ampplyer.fragments.TracksFragment;
+import com.action.amp.ampplyer.utils.HideSystemUIUtil;
 import com.action.amp.ampplyer.widget.media.AndroidMediaController;
 import com.action.amp.ampplyer.widget.media.IjkVideoView;
 import com.action.amp.ampplyer.widget.media.MeasureHelper;
@@ -80,7 +81,7 @@ public class VideoActivity extends AppCompatActivity implements TracksFragment.I
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-
+        HideSystemUIUtil.showTopStateBar(this,false);
         mSettings = new Settings(this);
 
         // handle arguments
